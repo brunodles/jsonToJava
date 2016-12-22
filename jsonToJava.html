@@ -1,0 +1,32 @@
+<html>
+	<head>
+		<style type="text/css">
+			textarea {
+				width: 100% !important;
+				height: 40% !important;
+			}
+		</style>
+	</head>
+	<body>
+		Class name<br/>
+		<input type="text" id="name"></input><br/>
+		Json
+		<textarea type="text" id="json"></textarea><br/>
+		Result, java code
+		<textarea type="text" id="java"></textarea><br/>
+		<button onclick="jsonToJava	()">Convert</button><br/>
+		<script src="jsonToJava.js"></script>
+		<script>
+			var json = document.getElementById("json");
+			var java = document.getElementById("java");
+			
+			function jsonToJava(){
+				var name = document.getElementById("name");
+					console.log(name.value)
+					var javaCode = generateJavaClass(name.value, json.value);
+					console.log(javaCode)
+					java.value = javaCode;
+			}
+		</script>
+	</body>
+</html>
